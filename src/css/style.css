@@ -1,0 +1,48 @@
+body {
+  background-color: #FEBB0B;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+span {
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.avatar {
+  margin: 10px auto;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+}
+
+.card {
+  width: 18rem;
+  background-color: #231E39;
+  margin: 20px 10px 10px 0px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.preloader {
+  text-align: center;
+  font-size: 32px;
+}
+
+.spinner-border {
+  margin-top: 20px;
+}
