@@ -1,13 +1,17 @@
 import React from "react";
 
-const Preloader = (props) => {
-  return (
-    <div className="d-flex justify-content-center">
-      <div className="spinner-border" role="status">
-        <span className="sr-only">Loading...</span>
-      </div>
+export default () =>
+    <div className="start-container">
+        <div className="lds-roller">
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+        </div>
     </div>
-  );
-};
 
-export default Preloader;
+

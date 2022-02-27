@@ -7,7 +7,7 @@ const UserAvatar = (props) => {
       width={props.width}
       height={props.height}
       alt="Avatar"
-      className="avatar"
+      className="round"
     />
   );
 };
