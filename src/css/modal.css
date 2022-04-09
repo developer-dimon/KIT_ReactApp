@@ -1,0 +1,61 @@
+
+
+.button-17 {
+    border-color: #f1c40f;
+    align-items: center;
+    appearance: none;
+    background-color: #231E39;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    padding: 2px 24px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 300ms ease-in-out;
+}
+
+.button-17:hover {
+    background: #231E39;
+    color: #f1c40f;
+}
+
+.button-17:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+}
+
+.button-17:focus {
+    outline: none;
+    border: 2px solid #231E39;
+}
+
+.button-17:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.modal-content{
+    background: rgba(255,255,255,0.9);
+}
