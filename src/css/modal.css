@@ -57,5 +57,14 @@
 }
 
 .modal-content{
+    color: black;
+    font-family: 'Montserrat', sans-serif;
     background: rgba(255,255,255,0.9);
+}
+.add-friend{
+    display: inline-block;
+    width: 100%;
+}
+.modal-sm{
+    max-width: 400px;
 }

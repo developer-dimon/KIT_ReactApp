@@ -4,6 +4,7 @@ import '../css/style.css'
 import {connect, useSelector} from "react-redux";
 import Preloader from "../common/Preloader";
 import {getNewUsersAction} from "../redux/actions/userAction";
+import {deleteAllFriendsAction} from "../redux/actions/friendAction";
 
 function UserList(props) {
     const loading = useSelector(state => {
@@ -38,6 +39,7 @@ function mapDispatchToProps(dispatch) {
     return {
         newUsers: () => {
             dispatch(getNewUsersAction())
+            dispatch(deleteAllFriendsAction())
         }
     }
 }

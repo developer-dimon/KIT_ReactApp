@@ -68,8 +68,7 @@ body {
 .cards-container .round {
   border: 1px solid #f1c40f;
   border-radius: 50%;
-  padding: 7px;
-  width: 200px;
+  /*padding: 7px;*/
 }
 
 .card-info {
@@ -83,7 +82,7 @@ body {
   padding: 0;
 }
 
-.card-info ul li {
+.li-card{
   border: 1px solid #2D2747;
   border-radius: 2px;
   list-style-type: none;
@@ -275,7 +274,6 @@ h3 {
 }
 
 hr {
-  width: 50px;
   height: 3px;
   margin: 20px auto;
   border: 0;
@@ -330,4 +328,21 @@ hr {
 }
 .utility-list li.date {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-calendar.svg) no-repeat 0 0.1em;
+}
+
+.friend-item{
+  display: flex;
+  justify-content: space-between;
+}
+.friend-li{
+  list-style: none;
+}
+.friend-info-text{
+  margin: 0 15px;
+}
+.friend-delete{
+  cursor: pointer;
+}
+.friend-info{
+  display: flex;
 }
