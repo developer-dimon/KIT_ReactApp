@@ -1,6 +1,6 @@
 import React from "react";
 import '../css/modal.css'
-import {connect, useDispatch, useSelector} from "react-redux";
+import {connect, useSelector} from "react-redux";
 import {addFriendAction} from "../redux/actions/friendAction";
 import BestFriendCard from "./BestFriendCard";
 
@@ -9,10 +9,13 @@ function BestFriendsList(props) {
         const {userReducer} = state
         return userReducer.users;
     })
-    // const friends = useSelector(state => {
-    //     const {friendsReducer} = state
-    //     return friendsReducer.friends;
-    // })
+
+    function checkFriends(friends) {
+        for (let friend in friends) {
+            return true
+        }
+        return false;
+    }
 
     return (
         <div>
@@ -30,18 +33,22 @@ function BestFriendsList(props) {
                         </div>
                         <div className="modal-body">
                             <ul>
-                                {/*{console.log(friends[props.user.uuid])}*/}
-                                {props.friends[props.user.uuid] ? Object.keys(props.friends[props.user.uuid])
-                                    .map(friendKey => <li className='friend-li'>
-                                        <BestFriendCard user={props.user} friend={props.friends[props.user.uuid][friendKey]}/>
+                                {checkFriends(props.friends[props.user.uuid]) ? Object.keys(props.friends[props.user.uuid])
+                                    .map((friendKey, id) => <li className='friend-li'>
+                                        <BestFriendCard key={id} user={props.user}
+                                                        friend={props.friends[props.user.uuid][friendKey]}/>
                                     </li>) : <p>У пользователя нет друзей</p>}
                             </ul>
 
                         </div>
+                        <p className="add-friend-title">Добавить друзей:</p>
                         <div className="modal-footer">
+
                             <select className="custom-select add-friend" size="5">
-                                {users.map(user => <option onClick={() =>
-                                    props.addFriend(props.user.uuid, user)} value={user.login.uuid}>{user.name.last}</option>)}
+                                {users.map(user => <option data-bs-toggle="tooltip" data-bs-placement="top"
+                                                           title="Добавить друга" className="add-friend-option"
+                                                           onClick={() => props.addFriend(props.user.uuid, user)}
+                                                           value={user.login.uuid}>{user.name.last}</option>)}
                             </select>
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
@@ -52,6 +59,7 @@ function BestFriendsList(props) {
 
     )
 }
+
 function mapStateToProps(state) {
     const {friendsReducer} = state;
     return {

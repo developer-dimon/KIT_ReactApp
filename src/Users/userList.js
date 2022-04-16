@@ -19,8 +19,8 @@ function UserList(props) {
             {loading ?
                 <Preloader/> :
                 <div className="cards-container">
-                    <div className="row row-cols-sm-4">
-                        {props.users && props.users.map(value => <UserCard user={value}/>)}
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        {props.users && props.users.map((value, id) => <UserCard key={id} user={value}/>)}
                     </div>
                 </div>
             }

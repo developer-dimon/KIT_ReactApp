@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import UserAvatar from "./userAvatar";
-import {connect, useDispatch} from "react-redux";
+import {useDispatch} from "react-redux";
 import {deleteFriendsAction} from "../redux/actions/friendAction";
 
 function BestFriendCard(props) {
@@ -8,7 +8,6 @@ function BestFriendCard(props) {
     const deleteFriend = (userId, friendId) => {
         dispatch(deleteFriendsAction(userId, friendId))
     }
-
     return (
         <div>
             <div className='friend-item'>
@@ -17,7 +16,8 @@ function BestFriendCard(props) {
                     <p className='friend-info-text'>{props.friend.name.last} {props.friend.name.first}</p>
                 </div>
                 <div onClick={() => deleteFriend(props.user.uuid, props.friend.login.uuid)}
-                     className="friend-delete">&times;</div>
+                     className="friend-delete" data-bs-toggle="tooltip" data-bs-placement="top"
+                     title="Удалить друга">&times;</div>
             </div>
             <hr/>
         </div>

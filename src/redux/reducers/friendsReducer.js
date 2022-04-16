@@ -5,9 +5,9 @@ const initialState = {
 }
 
 export const friendsReducer = (state = initialState, action) => {
+    const newFriends = JSON.parse(JSON.stringify(state.friends))
     switch (action.type) {
         case ADD_FRIEND:
-            const newFriends = state.friends
             if (!newFriends[action.userId]) {
                 newFriends[action.userId] = {}
                 newFriends[action.userId][action.friendId] = action.data
@@ -26,10 +26,10 @@ export const friendsReducer = (state = initialState, action) => {
                     updateFriends[key] = state.friends[action.userId][key]
                 }
             }
-            state.friends[action.userId] = updateFriends
+            newFriends[action.userId] = updateFriends
             return {
                 ...state,
-                friends: state.friends
+                friends: newFriends
             }
         case DELETE_ALL_FRIENDS:
             return {
