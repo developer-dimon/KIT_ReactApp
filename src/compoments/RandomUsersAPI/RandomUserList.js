@@ -1,12 +1,12 @@
 import React from "react";
-import UserCard from "./userCard";
-import '../css/style.css'
+import RandomUserCard from "./RandomUserCard";
+import '../../css/style.css'
 import {connect, useSelector} from "react-redux";
-import Preloader from "../common/Preloader";
-import {getNewUsersAction} from "../redux/actions/userAction";
-import {deleteAllFriendsAction} from "../redux/actions/friendAction";
+import Preloader from "../../common/Preloader";
+import {getNewRandomUsersAction} from "../../redux/actions/randomUserAction";
+import {deleteAllFriendsAction} from "../../redux/actions/friendAction";
 
-function UserList(props) {
+function RandomUserList(props) {
     const loading = useSelector(state => {
         const {appReducer} = state
         return appReducer.loading;
@@ -19,8 +19,8 @@ function UserList(props) {
             {loading ?
                 <Preloader/> :
                 <div className="cards-container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        {props.users && props.users.map((value, id) => <UserCard key={id} user={value}/>)}
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-3">
+                        {props.users && props.users.map((value, id) => <RandomUserCard key={id} user={value}/>)}
                     </div>
                 </div>
             }
@@ -29,19 +29,19 @@ function UserList(props) {
 }
 
 function mapStateToProps(state) {
-    const {userReducer} = state;
+    const {randomUserReducer} = state;
     return {
-        users: userReducer.users,
+        users: randomUserReducer.users,
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         newUsers: () => {
-            dispatch(getNewUsersAction())
+            dispatch(getNewRandomUsersAction())
             dispatch(deleteAllFriendsAction())
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserList);
+export default connect(mapStateToProps, mapDispatchToProps)(RandomUserList);

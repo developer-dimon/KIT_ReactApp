@@ -1,13 +1,19 @@
 import React from "react";
-import './css/style.css';
-import UserList from "./Users/userList";
+import Layout from "./compoments/Layout";
+import {Route, Routes} from "react-router";
+import SignInPage from "./pages/SignInPage";
+import MainPage from "./pages/MainPage";
 
 class App extends React.Component {
-
     render() {
         return (
             <div className="App">
-                <UserList/>
+                <Routes>
+                    <Route path="/" element={<Layout/>}>
+                        <Route index element={<MainPage/>}/>
+                        <Route path="/login" element={<SignInPage/>}/>
+                    </Route>
+                </Routes>
             </div>
         );
     }

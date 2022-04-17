@@ -1,14 +1,14 @@
 import React from "react";
-import '../css/modal.css'
+import '../../css/modal.css'
 import {connect, useSelector} from "react-redux";
-import {addFriendAction} from "../redux/actions/friendAction";
+import {addFriendAction} from "../../redux/actions/friendAction";
 import BestFriendCard from "./BestFriendCard";
-import UserAvatar from "./userAvatar";
+import RandomUserAvatar from "./RandomUserAvatar";
 
 function BestFriendsList(props) {
     const users = useSelector(state => {
-        const {userReducer} = state
-        return userReducer.users;
+        const {randomUserReducer} = state
+        return randomUserReducer.users;
     })
 
     function checkFriends(friends) {
@@ -52,7 +52,7 @@ function BestFriendsList(props) {
                                             onClick={() => props.addFriend(props.user.uuid, user)}>
                                             <div className='friend-item'>
                                                 <div className="friend-info">
-                                                    <UserAvatar key={id} src={user.picture.thumbnail} width={40} height={40}/>
+                                                    <RandomUserAvatar key={id} src={user.picture.thumbnail} width={40} height={40}/>
                                                     <p className='friend-info-text'>{user.name.last} {user.name.first}</p>
                                                 </div>
                                             </div>

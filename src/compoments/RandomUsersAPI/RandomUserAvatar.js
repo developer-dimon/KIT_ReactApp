@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserAvatar = (props) => {
+const RandomUserAvatar = (props) => {
   return (
     <img
       src={props.src}
@@ -12,4 +12,4 @@ const UserAvatar = (props) => {
   );
 };
 
-export default UserAvatar;
+export default RandomUserAvatar;

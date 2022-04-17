@@ -1,13 +1,13 @@
 import React from "react";
-import UserAvatar from "./userAvatar";
+import RandomUserAvatar from "./RandomUserAvatar";
 import BestFriendsList from "./BestFriendsList";
 
 
-const UserCard = (props) => {
+const RandomUserCard = (props) => {
     return (
         <div className="col">
             <div className="card">
-                <UserAvatar src={props.user.picture.large} width={200} height={200}/>
+                <RandomUserAvatar src={props.user.picture.large} width={200} height={200}/>
                 <div className="card-info">
                     <ul>
                         <li className='li-card' id="Surname">Фамилия Имя: {props.user.name.first} {props.user.name.last}</li>
@@ -24,4 +24,4 @@ const UserCard = (props) => {
     );
 };
 
-export default UserCard;
+export default RandomUserCard;
