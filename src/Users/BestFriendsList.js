@@ -3,6 +3,7 @@ import '../css/modal.css'
 import {connect, useSelector} from "react-redux";
 import {addFriendAction} from "../redux/actions/friendAction";
 import BestFriendCard from "./BestFriendCard";
+import UserAvatar from "./userAvatar";
 
 function BestFriendsList(props) {
     const users = useSelector(state => {
@@ -43,13 +44,21 @@ function BestFriendsList(props) {
                         </div>
                         <p className="add-friend-title">Добавить друзей:</p>
                         <div className="modal-footer">
-
-                            <select className="custom-select add-friend" size="5">
-                                {users.map(user => <option data-bs-toggle="tooltip" data-bs-placement="top"
-                                                           title="Добавить друга" className="add-friend-option"
-                                                           onClick={() => props.addFriend(props.user.uuid, user)}
-                                                           value={user.login.uuid}>{user.name.last}</option>)}
-                            </select>
+                            <div className="select-add-friend">
+                                <ul>
+                                    {users.map((user, id) =>
+                                        <li data-bs-toggle="tooltip" data-bs-placement="top"
+                                            title="Добавить друга" className="add-friend-li"
+                                            onClick={() => props.addFriend(props.user.uuid, user)}>
+                                            <div className='friend-item'>
+                                                <div className="friend-info">
+                                                    <UserAvatar key={id} src={user.picture.thumbnail} width={40} height={40}/>
+                                                    <p className='friend-info-text'>{user.name.last} {user.name.first}</p>
+                                                </div>
+                                            </div>
+                                        </li>)}
+                                </ul>
+                            </div>
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
