@@ -14,7 +14,7 @@ function RandomUserList(props) {
     return (
         <div>
             <button type="button" onClick={props.newUsers} className="btn-custom btn-generator">
-                Generator users API
+                Generate users
             </button>
             {loading ?
                 <Preloader/> :
