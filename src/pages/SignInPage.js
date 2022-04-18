@@ -3,27 +3,26 @@ import React from "react";
 function SignInPage() {
     return (
         <>
-            <div className='bold-line'></div>
-            <div className='container'>
-                <div className='window'>
-                    <div className='overlay'></div>
-                    <div className='content'>
-                        <div className='welcome'>Hello There!</div>
-                        <div className='subtitle'>We're almost done. Before using our services you need to create an
-                            account.
-                        </div>
-                        <div className='input-fields'>
-                            <input type='text' placeholder='Username' className='input-line full-width'></input>
-                            <input type='email' placeholder='Email' className='input-line full-width'></input>
-                            <input type='password' placeholder='Password' className='input-line full-width'></input>
-
-                        </div>
-                        <div className='spacing'>or continue with <span className='highlight'>Facebook</span></div>
-                        <div>
-                            <button className='ghost-round full-width'>Create Account</button>
-                        </div>
+            <div className="container-login">
+                <input type="checkbox" id="chk" aria-hidden="true"/>
+                    <div className="signup">
+                        <form method="POST">
+                            <label className="label-login" htmlFor="chk" aria-hidden="true">Sign up</label>
+                            <input className="input-login" type="text" name="txt" placeholder="User name" required=""/>
+                                <input className="input-login"  type="email" name="email" placeholder="Email" required=""/>
+                                    <input  className="input-login" type="password" name="pswd" placeholder="Password" required=""/>
+                                        <button className="button-login">Sign up</button>
+                        </form>
                     </div>
-                </div>
+
+                    <div className="login">
+                        <form>
+                            <label className="label-login" htmlFor="chk" aria-hidden="true">Login</label>
+                            <input className="input-login"  type="email" name="email" placeholder="Email" required=""/>
+                                <input className="input-login"  type="password" name="pswd" placeholder="Password" required=""/>
+                                    <button className="button-login">Login</button>
+                        </form>
+                    </div>
             </div>
         </>
     )

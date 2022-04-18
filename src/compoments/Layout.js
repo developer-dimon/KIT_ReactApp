@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../pages/Header";
+import Header from "./Header";
 import {Outlet} from "react-router"
 function Layout() {
     return (
@@ -18,7 +18,7 @@ function Layout() {
                 <li></li>
             </ul>
             <Outlet/>
-            <footer><p className="footer-p">©Dmitry_Krivoshein 2022</p></footer>
+            {/*<footer><p className="footer-p">©Dmitry_Krivoshein 2022</p></footer>*/}
         </>
     )
 }
