@@ -2,9 +2,9 @@ import React from "react";
 import RandomUserCard from "./RandomUserCard";
 import '../../css/style.css'
 import {connect, useSelector} from "react-redux";
-import Preloader from "../../common/Preloader";
-import {getNewRandomUsersAction} from "../../redux/actions/randomUserAction";
-import {deleteAllFriendsAction} from "../../redux/actions/friendAction";
+import Preloader from "../Preloader";
+import {getNewRandomUsersAction} from "../../redux/actions/randomUserActions";
+import {deleteAllFriendsAction} from "../../redux/actions/friendActions";
 
 function RandomUserList(props) {
     const loading = useSelector(state => {

@@ -1,7 +1,7 @@
 import React from "react";
 import '../../css/modal.css'
 import {connect, useSelector} from "react-redux";
-import {addFriendAction} from "../../redux/actions/friendAction";
+import {addFriendAction} from "../../redux/actions/friendActions";
 import BestFriendCard from "./BestFriendCard";
 import RandomUserAvatar from "./RandomUserAvatar";
 

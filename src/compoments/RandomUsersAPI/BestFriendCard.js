@@ -1,7 +1,7 @@
 import React from "react";
 import RandomUserAvatar from "./RandomUserAvatar";
 import {useDispatch} from "react-redux";
-import {deleteFriendsAction} from "../../redux/actions/friendAction";
+import {deleteFriendsAction} from "../../redux/actions/friendActions";
 
 function BestFriendCard(props) {
     const dispatch = useDispatch()

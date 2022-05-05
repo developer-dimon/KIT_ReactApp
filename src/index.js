@@ -7,21 +7,19 @@ import {applyMiddleware, createStore, compose} from "redux";
 import {rootReducer} from "./redux/reducers/rootReducer";
 import {BrowserRouter} from "react-router-dom";
 
-
 const persistedState = localStorage.getItem('reduxState')
     ? JSON.parse(localStorage.getItem('reduxState')) : {}
 
-const store = createStore(rootReducer, persistedState, compose(applyMiddleware(thunk)));
+const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
-store.subscribe(() => {
-    localStorage.setItem('reduxState', JSON.stringify(store.getState()))
-})
+// store.subscribe(() => {
+//     localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+// })
 ReactDOM.render(
     <React.StrictMode>
     <Provider store={store}>
         <BrowserRouter>
-
-            <App/>
+                <App/>
         </BrowserRouter>
     </Provider>
         </React.StrictMode>,

@@ -18,7 +18,7 @@ function Header() {
                         {/*<ul className="menu-ul">*/}
                             {/*<li className="menu-li">Home</Link></li>*/}
                         {/*</ul>*/}
-                        <Link className="btn btn-navbar" to="/login">Sign Up </Link>
+                        <Link className="btn btn-navbar" to="/auth">Sign Up </Link>
                     </div>
                 </div>
             </header>
