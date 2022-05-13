@@ -94,6 +94,7 @@ body {
   padding: 7px;
   text-overflow: ellipsis;
   overflow: hidden;
+
 }
 .card-footer{
   text-align: left;
@@ -569,3 +570,6 @@ hr {
   margin-right: 0;
 }
 
+.profile-card{
+  margin: 0 auto;
+}

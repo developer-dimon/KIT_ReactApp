@@ -1,6 +1,6 @@
 import React from "react";
-import SignUp from "../compoments/Auth/signUp";
-import Login from "../compoments/Auth/login";
+import SignUp from "../compoments/User/SignUp";
+import Login from "../compoments/User/Login";
 
 function AuthPage() {
     return (

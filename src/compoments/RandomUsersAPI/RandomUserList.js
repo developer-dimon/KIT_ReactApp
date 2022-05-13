@@ -2,7 +2,7 @@ import React from "react";
 import RandomUserCard from "./RandomUserCard";
 import '../../css/style.css'
 import {connect, useSelector} from "react-redux";
-import Preloader from "../Preloader";
+import Preloader from "../Base/Preloader";
 import {getNewRandomUsersAction} from "../../redux/actions/randomUserActions";
 import {deleteAllFriendsAction} from "../../redux/actions/friendActions";
 
