@@ -1,10 +1,12 @@
 import {combineReducers} from "redux";
-import {userReducer} from "./userReducer";
+import {randomUserReducer} from "./randomUserReducer";
 import {appReducer} from "./appReducer";
 import {friendsReducer} from './friendsReducer'
+import userReducer from "../slices/userSlice"
 
 export const rootReducer = combineReducers({
-    userReducer,
+    randomUserReducer,
     appReducer,
     friendsReducer,
+    userReducer,
 })

@@ -1,7 +1,7 @@
 import React from "react";
-import UserAvatar from "./userAvatar";
+import RandomUserAvatar from "./RandomUserAvatar";
 import {useDispatch} from "react-redux";
-import {deleteFriendsAction} from "../redux/actions/friendAction";
+import {deleteFriendsAction} from "../../redux/actions/friendActions";
 
 function BestFriendCard(props) {
     const dispatch = useDispatch()
@@ -12,7 +12,7 @@ function BestFriendCard(props) {
         <div>
             <div className='friend-item'>
                 <div className="friend-info">
-                    <UserAvatar src={props.friend.picture.thumbnail} width={40} height={40}/>
+                    <RandomUserAvatar src={props.friend.picture.thumbnail} width={40} height={40}/>
                     <p className='friend-info-text'>{props.friend.name.last} {props.friend.name.first}</p>
                 </div>
                 <div onClick={() => deleteFriend(props.user.uuid, props.friend.login.uuid)}
